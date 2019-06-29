@@ -1,5 +1,6 @@
 package com.example.applicationone
 
+import android.app.Application
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -16,6 +17,7 @@ import android.graphics.Bitmap
 import android.util.Log
 import android.view.View
 import androidx.core.content.FileProvider
+import androidx.room.Room
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonGallery.setOnClickListener {
-            val intent = Intent(this, PictureActivity::class.java)
+            val intent = Intent(this, GalleryActivity::class.java)
             startActivity(intent)
         }
 
@@ -65,6 +67,8 @@ class MainActivity : AppCompatActivity() {
         ).apply {
             // Save a file: path for use with ACTION_VIEW intents
             currentPhotoPath = absolutePath
+            Log.d("Image Name : ", currentPhotoPath)
+
         }
     }
 

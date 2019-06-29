@@ -18,27 +18,21 @@ class GalleryActivity : AppCompatActivity() {
 
         galleryActivityViewModel = ViewModelProviders.of(this).get(GalleryActivityViewModel::class.java)
 
-
         showFragment(galleryActivityViewModel!!.getInitial())
 
         buttonGridView.setOnClickListener {
-            if (isFragmentSingleLoaded) {
-                showFragment(galleryActivityViewModel!!.getCurrent())
-            }
-        }
-        buttonSingleView.setOnClickListener {
-            if (isFragmentGridLoaded) {
-                showFragment(galleryActivityViewModel!!.getCurrent())
-            }
+            showGridFragment()
         }
     }
 
     private fun showFragment(checkDigit : Int) {
         if (checkDigit == 0) {
+
             showGridFragment()
             isFragmentGridLoaded = true
             isFragmentSingleLoaded = false
         } else {
+
             showSingleFragment()
             isFragmentGridLoaded = false
             isFragmentSingleLoaded = true

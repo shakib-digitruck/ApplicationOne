@@ -14,14 +14,6 @@
             android:orientation="horizontal"
             android:gravity="center_horizontal">
         <Button
-                android:text="Single"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:layout_editor_absoluteY="16dp"
-                tools:layout_editor_absoluteX="39dp"
-                android:id="@+id/buttonSingleView"
-                android:visibility="visible"/>
-        <Button
                 android:text="Grid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

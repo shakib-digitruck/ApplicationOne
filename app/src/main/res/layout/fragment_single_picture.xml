@@ -6,9 +6,19 @@
              tools:context=".SinglePicture">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Single view"/>
+            android:gravity="center" android:orientation="vertical">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv"/>
+
+        <ImageView
+                android:id="@+id/image2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"/>
+    </LinearLayout>
 
 </FrameLayout>
