@@ -1,6 +1,7 @@
 package com.example.applicationone
 
 import android.content.Context
+import android.media.Image
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_picture.*
 import kotlinx.android.synthetic.main.fragment_grid_picture.*
 import kotlinx.android.synthetic.main.fragment_single_picture.*
 
@@ -39,9 +41,6 @@ class SinglePicture : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
-
-    private lateinit var imageView: ImageView
-
 
     var galleryActivityViewModel : GalleryActivityViewModel? = null
 
@@ -73,10 +72,6 @@ class SinglePicture : Fragment() {
 
         galleryActivityViewModel = ViewModelProviders.of(activity!!).get(GalleryActivityViewModel::class.java)
         var msg = galleryActivityViewModel!!.getText()
-
-        Log.d("LINK " , msg)
-
-        tv.setText(msg)
 
         Picasso.get()
             .load(msg)
